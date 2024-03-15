@@ -12,11 +12,25 @@ class Main(QWidget):
 
     def UI(self):
         self.mainDesing()
+        self.layouts()
 
         pass
 
     def mainDesing(self):
         pass
+    def layouts(self):
+        self.mainLayout=QHBoxLayout()
+        self.leftLayout=QFormLayout()
+        self.rightMainLayout=QVBoxLayout()
+        self.rightTopLayout=QHBoxLayout()
+        self.rightBottomLayout=QHBoxLayout()
+
+        self.rightMainLayout.addLayout(self.rightTopLayout)
+        self.rightMainLayout.addLayout(self.rightBottomLayout)
+        self.mainLayout.addLayout(self.leftLayout)
+        self.mainLayout.addLayout(self.rightMainLayout)
+
+        self.setLayout(self.mainLayout)
 
 
 def main():
